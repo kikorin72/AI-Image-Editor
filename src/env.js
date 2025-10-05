@@ -12,6 +12,9 @@ export const env = createEnv({
     BETTER_AUTH_URL:z.string().url(),
     POLAR_ACCESS_TOKEN: z.string(),
     POLAR_ACCESS_SECRET:z.string(),
+    IMAGEKIT_URL_ENDPOINT: z.string().url(),
+    IMAGEKIT_PUBLIC_KEY: z.string(),
+    IMAGEKIT_PRIVATE_KEY: z.string(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -24,6 +27,8 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    // NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT: z.string().url(),
+    NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT: z.string().url(),
   },
 
   /**
@@ -33,11 +38,15 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
-    BETTER_AUTH_SECRET:process.env.BETTER_AUTH_SECRET,
-    BETTER_AUTH_URL:process.env.BETTER_AUTH_URL,
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
     POLAR_ACCESS_TOKEN: process.env.POLAR_ACCESS_TOKEN,
     POLAR_ACCESS_SECRET: process.env.POLAR_ACCESS_SECRET,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    IMAGEKIT_URL_ENDPOINT: process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT,
+    IMAGEKIT_PUBLIC_KEY: process.env.NEXT_PUBLIC_IMAGEKIT_KEY,
+    IMAGEKIT_PRIVATE_KEY: process.env.NEXT_PRIVATE_IMAGEKIT_KEY,
+    NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT:
+      process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
