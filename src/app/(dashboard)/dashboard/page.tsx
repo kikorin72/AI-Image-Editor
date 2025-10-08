@@ -292,7 +292,7 @@ export default function DashboardPage() {
                         <ImageKitImage
                           urlEndpoint={env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
                           src={project.filePath}
-                          alt={project.name || "Project"}
+                          alt={project.name ?? "Project"}
                           width={200}
                           height={200}
                           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
